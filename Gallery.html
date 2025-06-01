@@ -1,11 +1,148 @@
 <DOCTYPE html>
   <html>
     <head>Gallery</head>
-    <body>
+    <title>Moon Light ShowCase</title>
+    <style>
+        
+        body{
+            margin:0;
+            font-family:'segoe UI',sans-serif;
+            background:linear-gradient(to bottom,lightsteelblue,slateblue,midnightblue,slateblue,lightsteelblue);
+            padding:40px;
+            color:white;
+        }
+        h1{
+            text-align:center;
+            text-shadow:2px 2px 4px black
+            color:lavender;
+            margin-bottom:50px;
+        }
+        .gallery-box{
+            max-width:700px;
+            margin:auto;
+            padding:20px;
+            background:color:ghostwhite;
+            border-radius:15px;
+            box-shadow:0 8px 16px gray;
+            position:relative;
+            overflow:hidden;
+        }
+        .gallery-box h2{
+            color:darkslateblue;
+            text-align:center;
+            margin-bottom:15px;
+        }
+        .gallery-container{
+            display:flex;
+            overflow-x:auto;
+            behavior:smooth;
+        }
+        .gallery-container img{
+            height:150px;
+            width:250px;
+            box-shadow:0 4px 8px gray;
+            transition:transform 0.3s;
+        }
+        .gallery-container img:hover{
+            transform:scale(1.05);
+        }
+        .scroll-btn{
+            position:absolute;
+            top:50%;
+            transform:translateY(-50%);
+            background-color:lightgray;
+            color:black;
+            font-size:24px;
+            padding:10px;
+            border-radius:50%;
+            border:none;
+            curser:pointer;
+        }
+        .scroll-btn:hover{
+            background-color:silver;
+        }
+        .scroll-left{
+            left:10px;
+        }
+        .scroll-right{
+            right:10px;
+        }
+        .scrolling-strip{
+            overflow:hidden;
+            white-space:nowrap;
+            width:100%;
+            position:relative;
+            margin-top:60px;
+            height:160px;
+        }
+        .scrolling-content{
+            display:inline-block;
+            animation:scroll-left 40s linear infinite;
+            white-space:nowrap;
+        }
+        .scrolling-content img{
+            height:150px;
+            width:100px;
+            margin-right:20px;
+            border-radius:10px;
+            display:inline-block;
+            transition:transfom 0.3s;
+        }
+        .scrolling-content img:hover{
+            transform:scale(1.1);
+        }
+        @keyframes scroll-left{
+            0%{
+                transform:translateX(0%);
+            }
+            100%{
+                transform:translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
       <h3>Navigation menu</h3>
       <a href=index.html>Home page</a>
       <a href=Gallery.html>Gallery</a>
       <a href=About.html>About page</a>
       <hr>
+    <h1>moonlight image showcase</h1>
+    <div class="gallery-box">
+        <h2>manual image gallery</h2>
+        <button class="scroll-btn scroll-left" onclick="scrollgallery(-320)">&#8592</button>
+        <div class="gallery-container" id="gallery">
+           <img src="https://wallpapercave.com/wp/FIXrPvQ.jpg"> 
+           <img src="https://wallpapercave.com/w/qdS4HPB.jpg"> 
+           <img src="https://wallpapercave.com/w/1GuE9Pv.jpg"> 
+           <img src="https://wallpapercave.com/w/wp2668862.jpg"> 
+           <img src="https://wallpapercave.com/w/gHfx5s4.jpg"> 
+        </div>
+        <button class="scroll-btn scroll-right" onclick="scrollgallery(320)">&#8592</button>
+    </div>
+        
+        <div class="scrolling-strip">
+            <div class="scrolling-content">
+                <img src="https://wallpapercave.com/w/6GTcCEn.jpg">
+                <img src="https://wallpapercave.com/w/wp6987060.jpg">
+                <img src="https://wallpapercave.com/w/wp6987005.jpg">
+                <img src="https://wallpapercave.com/w/wp6987076.jpg">
+                <img src="https://wallpapercave.com/w/wp5288217.jpg">
+                
+                
+                <img src="https://wallpapercave.com/w/6GTcCEn.jpg">
+                <img src="https://wallpapercave.com/w/wp6987060.jpg">
+                <img src="https://wallpapercave.com/w/wp6987005.jpg">
+                <img src="https://wallpapercave.com/w/wp6987076.jpg">
+                <img src="https://wallpapercave.com/w/wp5288217.jpg">
+            </div>
+        </div>
+        
+        <script>
+            function scrollgallery(amount){
+                const gallery = document.getElementById("gallery");
+                gallery.scrollBy({ left:amount, behavior:"smooth"});
+            }
+         </script>
     </body>
   </html>
