@@ -1,11 +1,75 @@
 <DOCTYPE html>
   <html>
     <head>HOME</head>
-    <body>
+    <title>loginpage</title>
+    <style>
+      body{
+        font-family:'segoe UI',sans-serif;
+        background:linear-gradient(to bottom,lightgray,lightcyan,lightgray);
+        padding:60px;
+        margin:auto;
+        background-repeat:no-reapeat;
+        }
+        .box{
+        text-align:center;
+        display:block;
+        background-color:pink;
+        color:red;
+        margin:auto;
+        padding:60px;
+        box-shadow:0 5px 10px red;
+        border-collapse:collapse;
+        border-radius:12px;
+        border:black;
+        }
+        input[type="text"],
+        input[type="password"]{
+            background-color:lightcyan;
+            margin:auto;
+            color:black;
+            padding:5px;
+            box-shadow:0 10px 15px black;
+            border-radius:10px;
+            border:lightsteelblue;
+        }
+        input[type="submit"]{
+            background-color:white;
+            color:green;
+            padding:5px;
+            margin:auto;
+            box-shadow:0 10px 15px rgba(0,0,0,0.3);
+            border-radius:10px;
+            border:none;
+        }
+        .group{
+            color:lightcyan;
+            padding:10px; 
+            display:block; 
+        }
+    </style>
+      <body>
       <h3>Navigation menu</h3>
       <a href=index.html>Home page</a>
       <a href=Gallery.html>Gallery</a>
       <a href=About.html>About page</a>
       <hr>
-    </body>
+    <div class="box">
+        <div class="login">
+            <div class="loginbox">
+                <h2>
+                <i class="fa-solid fa-right-to-bracket"></i>
+                login
+                <i class="fa-solid fa-heart"></i>
+               </h2>
+               <input type="text" placeholder="username"><br><br>
+               <input type="password" placeholder="password"><br><br>
+               <input type="submit" value="signin"/>
+               <div class="group">
+                   <a href="#">forgotpassword</a>
+                   <a href="#">signup</a>
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
   </html>
